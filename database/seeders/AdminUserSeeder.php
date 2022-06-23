@@ -16,7 +16,14 @@ class AdminUserSeeder extends Seeder
     {
         User::create([
             'name' => 'Admin',
-            'email' => 'admin@elkinashop.com',
+            'email' => 'admin@laracamp.com',
+            'email_verified_at' => date('Y:m:d h:i:s', time()),
+            'password' => \bcrypt('password'),
+            'is_admin' => true
+        ]);
+        User::create([
+            'name' => 'Admin2',
+            'email' => 'admin2@laracamp.com',
             'email_verified_at' => date('Y:m:d h:i:s', time()),
             'password' => \md5('password'),
             'is_admin' => true
